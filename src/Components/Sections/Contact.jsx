@@ -10,6 +10,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log(
+      "SERVICE_ID:",
+      import.meta.env.VITE_SERVICE_ID,
+      "TEMPLATE_ID:",
+      import.meta.env.VITE_TEMPLATE_ID,
+      "PUBLIC_KEY:",
+      import.meta.env.VITE_PUBLIC_KEY
+    );
+
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
