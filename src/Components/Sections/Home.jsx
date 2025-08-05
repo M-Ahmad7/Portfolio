@@ -8,7 +8,7 @@ const Home = () => {
     >
       <div className="Card h-[40rem] w-[20rem] max-sm:h-[250px] max-sm:w-[55%] md:h[50%] md:w-[35%] md:ml-4  lg:w-[27%] xl:w-[25%] 2xl:w-[20%] mt-18 ">
         <img
-          src={`${import.meta.env.BASE_URL}me.jpg`}
+          src={`${import.meta.env.BASE_URL}me.png`}
           alt="Picture"
           className="max-sm:h-[99%] max-sm:w-[100%] h-[98%] w-[98%] "
         />

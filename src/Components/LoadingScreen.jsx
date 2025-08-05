@@ -25,7 +25,7 @@ const LoadingScreen = ({ onComplete }) => {
 
     return () => clearInterval(interval);
   }, [onComplete]);
-
+  import.meta.env.BASE_URL === "/your-repo-name/";
   return (
     <div
       className={`fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out ${
