@@ -33,8 +33,8 @@ const LoadingScreen = ({ onComplete }) => {
       }`}
     >
       <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src={"/public/bgk.mp4"}
+        className="Videoo absolute inset-0 w-full h-full object-cover z-0"
+        src={`${import.meta.env.BASE_URL}bgk.mp4`}
         autoPlay
         loop
         muted

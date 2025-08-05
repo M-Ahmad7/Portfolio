@@ -1,20 +1,6 @@
 import React from "react";
-import emialjs from "emailjs-com";
+
 const Home = () => {
-  const SERIVE_ID = "service_qb4cj1r";
-  const TEMPLATE_ID = "template_jd5m82r";
-  const PUBLIC_KEY = "fAsUYp34zfpQmU_sl";
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    emialjs
-      .sendForm(SERIVE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-      .then((result) => {
-        alert("Message Sent");
-      })
-      .catch(() => {
-        alert("Ooops! Something went wrong. Please try again!");
-      });
-  };
   return (
     <section
       id="home"
@@ -22,8 +8,8 @@ const Home = () => {
     >
       <div className="Card h-[40rem] w-[20rem] max-sm:h-[250px] max-sm:w-[55%] md:h[50%] md:w-[35%] md:ml-4  lg:w-[27%] xl:w-[25%] 2xl:w-[20%] mt-18 ">
         <img
-          src="/src/assets/me.png"
-          alt=""
+          src={`${import.meta.env.BASE_URL}me.jpg`}
+          alt="Picture"
           className="max-sm:h-[99%] max-sm:w-[100%] h-[98%] w-[98%] "
         />
       </div>

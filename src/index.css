@@ -74,6 +74,13 @@ background-size: cover;
 
 }
 
+@media (max-width: 375px) {
+  .Card {
+    height: 77%;
+  }
+  
+}
+
 @media (min-width: 375px) {
   .Card {
     height: 75%;
@@ -183,4 +190,12 @@ box-shadow: 0px 10px 0 0 rgb(0, 0, 0);
 .reveal.visible{
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 375px) {
+  .Videoo {
+    height: 80%;
+   
+  }
+  
 }
