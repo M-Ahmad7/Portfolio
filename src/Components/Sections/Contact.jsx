@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ScrollAnimation from "../ScrollAnimation";
-import emialjs from "emailjs-com";
+import emailjs from "emailjs-com";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,7 +10,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emialjs
+    emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
