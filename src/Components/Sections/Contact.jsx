@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import ScrollAnimation from "../ScrollAnimation";
 import emailjs from "emailjs-com";
+import { useEffect } from "react";
 const Contact = () => {
   const formRef = useRef();
   const [formData, setFormData] = useState({
@@ -8,6 +9,10 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
