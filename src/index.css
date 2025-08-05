@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+html , body {
+  margin: 0;
+  padding: 0;
+  font-family: "Spave Grotest" , sans-serif;
+  background-color: #ffffff;
+color: #f3f4f6;
+}
+
+@layer utilities {
+
+.animate-blink {
+    animation: blink 0.8s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 100;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+
+
+  @keyframes loading {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+     transform: translateX(250%)
+    }
+  }
+  .animate-loading-bar {
+    animation: loading 1s ease infinite ;
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1e1e1e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+  visibility: visible;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.Card{
+ 
+  background: black;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+border: 1px solid white;
+background-size: cover;
+
+}
+
+@media (min-width: 375px) {
+  .Card {
+    height: 75%;
+  }
+  
+}
+@media (min-width: 425px) {
+  .Card {
+    height: 79%;
+  }
+  
+}
+
+
+
+
+.Card img{
+  z-index: 3;
+}
+
+.Card::before{
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 150%;
+  background-image: linear-gradient(180deg , rgb(246, 213, 0), rgb(1, 225, 255));
+  animation: BGlines 3s alternate-reverse infinite;
+  transition: all 0.2s linear;
+z-index: 1;
+}
+
+@keyframes BGlines  {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Card::after {
+  content: "";
+  position: absolute;
+  background: black;
+  inset: 5x;
+  border-radius: 15px;
+z-index: 2;
+}
+.lii.active .icon {
+ transform: translate(0px , 30px);
+  transition: transform 0.3s ease;
+}
+.tag .text{
+
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  transition: 0.5s;
+  font-size: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.lii.active .tag .text{
+  opacity: 1;
+  transform: translateY(10px);
+}
+.indicator{
+ 
+top: 50%;
+  border-radius: 50%;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: blue;
+  border: 6px solid rgb(0, 0, 0);
+}
+.indicator::before{
+  content: "";
+  position: absolute;
+  top: 7%;
+  left: -20.5px;
+  width: 20px;
+height: 20px;
+background: transparent;
+border-bottom-right-radius: 20px ;
+box-shadow: 0px 10px 0 0 rgb(0, 0, 0);
+}
+
+.indicator::after{
+  content: "";
+  position: absolute;
+  top: 7%;
+  right: -20.5px;
+  width: 20px;
+height: 20px;
+background: transparent;
+border-bottom-left-radius: 20px ;
+box-shadow: 0px 10px 0 0 rgb(0, 0, 0);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out , transform 0.6s ease-out;
+}
+
+.reveal.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
