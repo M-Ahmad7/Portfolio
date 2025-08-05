@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ScrollAnimation from "../ScrollAnimation";
 import emailjs from "emailjs-com";
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,7 +25,7 @@ const Contact = () => {
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        e.target,
+        formRef.current,
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then(() => {
@@ -45,7 +46,12 @@ const Contact = () => {
           <h2 className="text-2xl  font-bold mb-6 bg-gradient-to-r from-blue-700 to-cyan-500 leading-tight bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <form action="" className="space-y-6" onSubmit={handleSubmit}>
+          <form
+            action=""
+            className="space-y-6"
+            ref={formRef}
+            onSubmit={handleSubmit}
+          >
             <div className="relative">
               <input
                 type="text"
